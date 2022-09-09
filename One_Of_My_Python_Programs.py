@@ -1,4 +1,4 @@
-print("One of my python programs")
+print("One of my Python programs")
 import random
 import sys
 
@@ -37,6 +37,7 @@ while guess != answer:
         print("You lose.")
         sys.exit()
 
+# My Super Duper Number-er
 if ("0", str(counter))[-2] == "1":
     print("You got it right on the {}th try!".format(counter))
 elif ("0", str(counter))[-1] == "1":
