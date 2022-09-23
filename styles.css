@@ -45,9 +45,18 @@ h1{
   margin-top:0;
 }
 
-a{
+.link1{
   background-color: #AF3333;
-  padding: 15px 200px;
+  padding: 20px 150px 10px 150px;
+  text-decoration: none;
+}
+
+.link2{
+  background-color: #BF7700;
+  padding: 20px 150px 20px 150px;
+  text-decoration: none;
+}
+a{
   text-decoration: none;
   color: white
 }
@@ -65,4 +74,7 @@ a{
   padding:10px;
   margin:10px;
   cursor: pointer;
+}
+img{
+  padding: 15px 0px
 }
