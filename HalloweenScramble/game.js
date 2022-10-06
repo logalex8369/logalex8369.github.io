@@ -48,6 +48,7 @@ var selectedWord = "";
 
 let countCorrect = 0;
 let gameOver = false;
+let lucky = 0;
 
 // This is a placeholder. You will need to move code into this funcation as part of the assignment. HINT -- the code you want to move into this function is above. :)
 function nextWord() {
@@ -63,6 +64,9 @@ function nextWord() {
     .split("") //This will split the word into an array of letters
     .sort(() => Math.random() - 0.5) //This will randomly sort the array of letters
     .join(""); // Now we want to join all those array elements back together into a string
+  if (scrambledWord == currentWord) {
+    lucky++;
+  }
   return currentWord;
 }
 
@@ -88,6 +92,8 @@ function giveUp() {
   document.getElementById("myWord").value = selectedWord;
   let gameOver = true;
   let countCorrect = 0;
+  return countCorrect;
+  return gameOver;
 }
 
 selectedWord = nextWord();
