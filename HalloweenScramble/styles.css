@@ -1,3 +1,54 @@
+.right {
+  float: right;
+  padding: 0px 0px 100px 0px;
+}
+
+.textbox {
+  margin: 6px 0px;
+  border-radius: 6px;
+}
+.textbox > input{
+  padding: 12px 30px;
+  margin: 6px 0px;
+  border-radius: 6px;
+  text-align:left;
+}
+
+.textboxcorrect {
+  background: #00b000;
+  padding: 12px 30px;
+  margin: 6px 0px;
+  border-radius: 6px;
+}
+
+.textboxwrong {
+  background: #CF2222;
+  padding: 12px 30px;
+  margin: 6px 0px;
+  border-radius: 6px;
+}
+input {
+  font-size: 24px;
+  text-align: left;
+}
+
+.scrambledword{
+  text-align:left;
+  color: #FFFFFF;
+  font-size: 40px;
+}
+.center {
+  text-align: center;
+  margin: 4px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:none;
+  border:#000000;
+  padding:20px;
+  max-width: none;
+}
+
 .check {
   background-color: #90b000;
   border: none;
@@ -21,52 +72,7 @@
   font-size: 32px;
   border-radius: 4px;
 }
-
-.textbox {
-  padding: 12px 30px;
-  margin: 6px 0px;
-  border-radius: 6px;
-}
-
-.textboxcorrect {
-  background: #00b000;
-  padding: 12px 30px;
-  margin: 6px 0px;
-  border-radius: 6px;
-}
-
-.textboxwrong {
-  background: #CF2222;
-  padding: 12px 30px;
-  margin: 6px 0px;
-  border-radius: 6px;
-}
-input {
-  font-size: 24px;
-  text-align: center;
-}
-.scrambledword {
-  font-size: 40px;
-}
-
-
-/*
-.scrambledword{
-  text-align:center;
-}
-.scrambledword > input{
-  text-align:left;
-  font-size: 40px;
-}
-*/
-.center {
-  text-align: center;
-  margin: 4px 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background:#ffffff;
-  border:#000000;
-  padding:20px;
-  max-width: none;
+body {
+  background-image: url(https://images6.alphacoders.com/552/552086.jpg);
+  background-size: cover;
 }
