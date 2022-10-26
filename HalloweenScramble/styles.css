@@ -1,31 +1,15 @@
+
 .right {
   float: right;
   padding: 0px 0px 100px 0px;
 }
 
-.textbox {
-  margin: 6px 0px;
-  border-radius: 6px;
-}
 .textbox > input{
+  background: #ffffff;
   padding: 12px 30px;
   margin: 6px 0px;
   border-radius: 6px;
   text-align:left;
-}
-
-.textboxcorrect {
-  background: #00b000;
-  padding: 12px 30px;
-  margin: 6px 0px;
-  border-radius: 6px;
-}
-
-.textboxwrong {
-  background: #CF2222;
-  padding: 12px 30px;
-  margin: 6px 0px;
-  border-radius: 6px;
 }
 input {
   font-size: 24px;
@@ -33,19 +17,17 @@ input {
 }
 
 .scrambledword{
-  text-align:left;
+  text-align:center;
   color: #FFFFFF;
   font-size: 40px;
 }
 .center {
   text-align: center;
-  margin: 4px 2px;
   display: flex;
   justify-content: center;
   align-items: center;
   background:none;
   border:#000000;
-  padding:20px;
   max-width: none;
 }
 
@@ -75,4 +57,7 @@ input {
 body {
   background-image: url(https://images6.alphacoders.com/552/552086.jpg);
   background-size: cover;
+}
+#unscrambled{
+  
 }
