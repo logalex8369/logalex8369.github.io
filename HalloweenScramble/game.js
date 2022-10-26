@@ -16,6 +16,7 @@ luckyAmount = 0;
 function nextWord() {
   // Our master array of Halloween words.  Note how it is declared as a CONST. Thats because we dont want anything changing these values
   const allWords = ["Costumes", "Monster", "Disguise", "Ghost", "Witch", "Pumpkin", "Candle", "Zombie", "Frankenstein", "October", "Scarecrow", "Pirate", "Crow", "Cat", "Broomstick", "Vampire", "Prince", "Princess", "Candy", "Werewolf", "Mask", "Spell", "Goblin", "Ghoul", "Alien", "Mummy", "Spooky", "Creepy", "Slimy", "Fangs", "Blood", "Skeleton", "Graveyard", "Party", "Screaming", "Bats", "Skull", "Wicked", "Scary"];
+  const funnyWords = ["Dis Guys", "Which", "Frank Einstein", "Vampirate", "Werewalffle", "Mommy", "Grave Yard Sale"];
 
   //Select a random word from the "allWords" array and assign it to a variable called "selectedWord"
   let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
@@ -30,18 +31,17 @@ function nextWord() {
 
 }
 
-//TODO: textbox color not working properly
 // This function is called when the user clicks on the "Check" button.
 function check() {
   if (selectedWord.toLowerCase() === document.getElementById("myWord").value.toLowerCase().trim()) {
     document.getElementById("myWord").style.background = "#00b000"
+    document.getElementById("unscrambled").innerHTML += " " + selectedWord + "<br>";
     countCorrect++;
     alert("You have " + countCorrect + " correct!")
-    document.getElementById("unscrambled").innerHTML += "<br>" + selectedWord;
     selectedWord = nextWord();
-    document.getElementById("myWord").style.background = "#ffffff"
   } else {
     document.getElementById("myWord").style.background = "#cf2222"
+    document.getElementById("unscrambled").innerHTML += " " + document.getElementById("myWord").value.charAt(0).toUpperCase().trim() + document.getElementById("myWord").value.slice(1).toLowerCase().trim();
     if (countCorrect == 1) {
       alert("You unscrambled 1 word correctly")
     } else {
@@ -49,7 +49,6 @@ function check() {
     }
     let gameOver = true;
     let countCorrect = 0;
-    document.getElementById("myWord").style.background = "#ffffff"
     return gameOver;
   }
 }
@@ -65,7 +64,6 @@ function giveUp() {
   }
   let gameOver = true;
   let countCorrect = 0;
-  document.getElementById("myWord").style.background = "#ffffff"
   return countCorrect;
   return gameOver;
 }

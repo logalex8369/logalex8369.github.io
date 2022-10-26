@@ -9,13 +9,13 @@
   <div id="scrambledWord" class="scrambledword"></div>
   
   <div class="center">
-    <div class = "textbox"><input type="text" id="myWord" class="textbox"></div>
+    <div class = "textbox"><input type="text" id="myWord" class="textbox" onKeyPress="document.getElementById('myWord').style.background = '#ffffff'"></div>
   </div>
   <div class="center">
     <button class="check" onclick="check()">Check</button> <button class="giveup" onclick="giveUp()">Give Up</button>
   </div>
   <div id="unscrambled">
-    
+    <br>
   </div>
   <script src="/HalloweenScramble/game.js"></script>
 </body>
