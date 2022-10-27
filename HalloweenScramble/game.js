@@ -58,7 +58,7 @@ function check() {
     } else {
       alert("Game Over. You unscrambled " + countCorrect + " words correctly")
     }
-    let countCorrect = 0;
+    countCorrect = 0;
   }
 }
 
@@ -71,8 +71,7 @@ function giveUp() {
   } else {
     alert("Game Over. You unscrambled " + countCorrect + " words correctly")
   }
-  let countCorrect = 0;
-  return countCorrect;
+  countCorrect = 0;
 }
 
 selectedWord = nextWord();
