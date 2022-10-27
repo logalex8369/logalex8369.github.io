@@ -7,20 +7,31 @@
 
 var selectedWord = "";
 //TODO: countcorrect variable not globally transported
-let countCorrect = 0;
-let gameOver = false;
-lucky = 0;
-luckyAmount = 0;
-
+var countCorrect = 0;
 // This is a placeholder. You will need to move code into this funcation as part of the assignment. HINT -- the code you want to move into this function is above. :)
 function nextWord() {
+  debugMode = 1;
   // Our master array of Halloween words.  Note how it is declared as a CONST. Thats because we dont want anything changing these values
   const allWords = ["Costumes", "Monster", "Disguise", "Ghost", "Witch", "Pumpkin", "Candle", "Zombie", "Frankenstein", "October", "Scarecrow", "Pirate", "Crow", "Cat", "Broomstick", "Vampire", "Prince", "Princess", "Candy", "Werewolf", "Mask", "Spell", "Goblin", "Ghoul", "Alien", "Mummy", "Spooky", "Creepy", "Slimy", "Fangs", "Blood", "Skeleton", "Graveyard", "Party", "Screaming", "Bats", "Skull", "Wicked", "Scary"];
-  const funnyWords = ["Dis Guys", "Which", "Frank Einstein", "Vampirate", "Werewalffle", "Mommy", "Grave Yard Sale"];
-
+  const funnyWords = ["Which", "Frank Einstein", "Vampirate", "Werewalffle", "Mommy", "Grave Yard Sale", "Neil A. an Alien"];
+  if (debugMode == 1) {
   //Select a random word from the "allWords" array and assign it to a variable called "selectedWord"
-  let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
-  let currentWord = allWords[randomIndex]; // Use that random index in allWords and set that to a new variable that will hold our selectedWord.
+    if (Math.floor(Math.random() * 2) == 0) {
+      let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
+      var currentWord = funnyWords[randomIndex];
+    } else {
+      let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
+      var currentWord = allWords[randomIndex];
+    }
+  } else {
+    if (Math.floor(Math.random() * 10) == 0) {
+      let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
+      var currentWord = funnyWords[randomIndex];
+    } else {
+      let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); //Don't worry about this math, but it will select a random number between 0 and the last index of the allWords array.
+      var currentWord = allWords[randomIndex];
+    }
+  }
 
   //Scramble the selectedWord and display it inside of a div called "scrambledWord"
   document.getElementById("scrambledWord").innerHTML = currentWord.toLowerCase()
@@ -43,13 +54,11 @@ function check() {
     document.getElementById("myWord").style.background = "#cf2222"
     document.getElementById("unscrambled").innerHTML += " " + document.getElementById("myWord").value.charAt(0).toUpperCase().trim() + document.getElementById("myWord").value.slice(1).toLowerCase().trim();
     if (countCorrect == 1) {
-      alert("You unscrambled 1 word correctly")
+      alert("Game Over. You unscrambled 1 word correctly")
     } else {
-      alert("You unscrambled " + countCorrect + " words correctly")
+      alert("Game Over. You unscrambled " + countCorrect + " words correctly")
     }
-    let gameOver = true;
     let countCorrect = 0;
-    return gameOver;
   }
 }
 
@@ -58,14 +67,12 @@ function giveUp() {
   document.getElementById("myWord").style.background = "#cf2222"
   document.getElementById("myWord").value = selectedWord;
   if (countCorrect == 1) {
-    alert("You unscrambled 1 word correctly")
+    alert("Game Over. You unscrambled 1 word correctly")
   } else {
-    alert("You unscrambled " + countCorrect + " words correctly")
+    alert("Game Over. You unscrambled " + countCorrect + " words correctly")
   }
-  let gameOver = true;
   let countCorrect = 0;
   return countCorrect;
-  return gameOver;
 }
 
 selectedWord = nextWord();
