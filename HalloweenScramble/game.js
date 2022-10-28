@@ -45,13 +45,19 @@ function nextWord() {
 // This function is called when the user clicks on the "Check" button.
 function check() {
   if (selectedWord.toLowerCase() === document.getElementById("myWord").value.toLowerCase().trim()) {
-    document.getElementById("myWord").style.background = "#00b000"
+    if (document.getElementById('check1').checked) {
+      document.getElementById("myWord").style.background = "#00b000"
+    }
     document.getElementById("unscrambled").innerHTML += " " + selectedWord + "<br>";
     countCorrect++;
-    alert("You have " + countCorrect + " correct!")
+    if (document.getElementById('check2').checked) {
+      alert("You have " + countCorrect + " correct!")
+    }
     selectedWord = nextWord();
   } else {
-    document.getElementById("myWord").style.background = "#cf2222"
+    if (document.getElementById('check1').checked) {
+      document.getElementById("myWord").style.background = "#cf2222"
+    }
     document.getElementById("unscrambled").innerHTML += " " + document.getElementById("myWord").value.charAt(0).toUpperCase().trim() + document.getElementById("myWord").value.slice(1).toLowerCase().trim();
     if (countCorrect == 1) {
       alert("Game Over. You unscrambled 1 word correctly")
@@ -64,7 +70,9 @@ function check() {
 
 //This function gets called when the user clicks on the "Give Up" button.
 function giveUp() {
-  document.getElementById("myWord").style.background = "#cf2222"
+  if (document.getElementById('check1').checked) {
+    document.getElementById("myWord").style.background = "#cf2222"
+  }
   document.getElementById("myWord").value = selectedWord;
   if (countCorrect == 1) {
     alert("Game Over. You unscrambled 1 word correctly")
