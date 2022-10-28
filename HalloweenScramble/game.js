@@ -5,32 +5,46 @@ function clearWords() {
   document.getElementById("unscrambled").innerHTML=""
 }
 function nextWord() {
-  debugMode = 1;
-  
+  if (document.getElementById('check5').checked) {
+    var debugMode = true;
+  } else {
+    var debugMode = false;
+  }
   const allWords = ["Costumes", "Monster", "Disguise", "Ghost", "Witch", "Pumpkin", "Candle", "Zombie", "Frankenstein", "October", "Scarecrow", "Pirate", "Crow", "Cat", "Broomstick", "Vampire", "Prince", "Princess", "Candy", "Werewolf", "Mask", "Spell", "Goblin", "Ghoul", "Alien", "Mummy", "Spooky", "Creepy", "Slimy", "Fangs", "Blood", "Skeleton", "Graveyard", "Party", "Screaming", "Bats", "Skull", "Wicked", "Scary"];
   const funnyWords = ["Which", "Frank Einstein", "Vampirate", "Werewalffle", "Mommy", "Grave Yard Sale", "Neil A. an Alien"];
-  if (debugMode == 1) {
-    if (Math.floor(Math.random() * 2) == 0) {
-      let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); 
-      var currentWord = funnyWords[randomIndex];
+  if (document.getElementById('check4').checked) {
+    if (debugMode == true) {
+      if (Math.floor(Math.random() * 2) == 0) {
+        let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); 
+        var currentWord = funnyWords[randomIndex];
+      } else {
+        let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); 
+        var currentWord = allWords[randomIndex];
+      }
     } else {
-      let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); 
-      var currentWord = allWords[randomIndex];
+      if (Math.floor(Math.random() * 10) == 0) {
+        let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); 
+        var currentWord = funnyWords[randomIndex];
+      } else {
+        let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); 
+        var currentWord = allWords[randomIndex];
+      }
     }
   } else {
-    if (Math.floor(Math.random() * 10) == 0) {
-      let randomIndex = Math.floor(Math.random() * (funnyWords.length - 1)); 
-      var currentWord = funnyWords[randomIndex];
-    } else {
-      let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); 
-      var currentWord = allWords[randomIndex];
-    }
+    let randomIndex = Math.floor(Math.random() * (allWords.length - 1)); 
+    var currentWord = allWords[randomIndex];
   }
-  
-  document.getElementById("scrambledWord").innerHTML = currentWord.toLowerCase()
+  if (document.getElementById('check3').checked) {
+    document.getElementById("scrambledWord").innerHTML = currentWord
     .split("") 
     .sort(() => Math.random() - 0.5) 
     .join(""); 
+  } else {
+    document.getElementById("scrambledWord").innerHTML = currentWord.toLowerCase()
+      .split("") 
+      .sort(() => Math.random() - 0.5) 
+      .join("");
+  }
   return currentWord;
 
 }
