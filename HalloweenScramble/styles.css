@@ -127,3 +127,14 @@ p{
   color: ffffff;
   margin: 10px;
 }
+#clear{
+  background-color: #999999;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  border-radius: 4px;
+}
