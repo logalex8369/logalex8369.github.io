@@ -54,7 +54,16 @@ h1{
 }
 
 .link2{
+  width: 100%;
   background-color: #BF6600;
+  padding: 20px 150px 10px 150px;
+  text-decoration: none;
+  border-radius: 12px;
+  margin: 12px 0px;
+}
+.link3{
+  width: 100%;
+  background-color: #BBBB00;
   padding: 20px 150px 10px 150px;
   text-decoration: none;
   border-radius: 12px;
