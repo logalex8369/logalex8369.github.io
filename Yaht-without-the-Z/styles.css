@@ -97,21 +97,32 @@ h1{
   font-size:1.25rem;
 }
 
-#grandTotalRow{
+
+#upperTotalRow{
   background:#C83E3E;
   color:#ffffff;
 }
-
-#grandTotalLabel{
+#upperTotalLabel{
   text-align:right;
   font-weight:bold;
   width:30%;
-
 }
-
-#totalScore{
+#upperTotalScore{
   width:20%;
   text-align:center;
   font-weight:bold;
-
+}
+#lowerTotalRow{
+  background:#C83E3E;
+  color:#ffffff;
+}
+#lowerTotalLabel{
+  text-align:right;
+  font-weight:bold;
+  width:30%;
+}
+#lowerTotalScore{
+  width:20%;
+  text-align:center;
+  font-weight:bold;
 }
