@@ -1,16 +1,17 @@
-submit(){
+function submit() {
   var number = document.getElementById("gender").value;
   var gender = number.options[number.selectedIndex].text;
-  let number = document.getElementById("age").value;
+  number = document.getElementById("age").value;
   var age = number.options[number.selectedIndex].text;
-  let number = document.getElementById("skinColor").value;
+  number = document.getElementById("skinColor").value;
   var skincolor = number.options[number.selectedIndex].text;
   var name = document.getElementById("name").value;
-  image = "/TextAdventure/img/" + makePerson(gender, age, skincolor) + ".png"
+  image = "/TextAdventure/img/" + makePerson(gender, age, skincolor) + ".png " + name;
+  return image;
 }
 
-makePerson(g, a, sc){
-  if (a == "0-15"){
+function makePerson(g, a, sc) {
+  if (a == "0-15") {
     if (g == "Boy") {
       if (sc == "Black") {
         image = "black_boy"
@@ -53,7 +54,7 @@ makePerson(g, a, sc){
       }
     }
   } else {
-     if (g == "Boy") {
+    if (g == "Boy") {
       if (sc == "Black") {
         image = "black_grandpa"
       } else {
@@ -65,7 +66,10 @@ makePerson(g, a, sc){
       } else {
         image = "white_grandma"
       }
-    } 
+    }
   }
   return image;
 }
+
+var link = submit().slice(0,submit().indexOf(" "))
+var name = submit().slice(submit().indexOf(" ") + 1)
