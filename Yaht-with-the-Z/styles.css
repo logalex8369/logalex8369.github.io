@@ -126,3 +126,17 @@ h1{
   text-align:center;
   font-weight:bold;
 }
+#totalRow{
+  background:#C83E3E;
+  color:#ffffff;
+}
+#totalLabel{
+  text-align:right;
+  font-weight:bold;
+  width:30%;
+}
+#totalScore{
+  width:20%;
+  text-align:center;
+  font-weight:bold;
+}
