@@ -98,11 +98,11 @@ h1{
 }
 
 
-#upperTotalRow{
+#specialRow{
   background:#C83E3E;
   color:#ffffff;
 }
-#upperTotalLabel{
+#specialLabel{
   text-align:right;
   font-weight:bold;
   width:30%;
@@ -112,30 +112,21 @@ h1{
   text-align:center;
   font-weight:bold;
 }
-#lowerTotalRow{
-  background:#C83E3E;
-  color:#ffffff;
-}
-#lowerTotalLabel{
-  text-align:right;
-  font-weight:bold;
-  width:30%;
-}
 #lowerTotalScore{
   width:20%;
   text-align:center;
   font-weight:bold;
 }
-#totalRow{
-  background:#C83E3E;
+#totalScore{
+  width:20%;
+  text-align:center;
+  font-weight:bold;
+}
+#highScoreRow{
+  background:#ffc040;
   color:#ffffff;
 }
-#totalLabel{
-  text-align:right;
-  font-weight:bold;
-  width:30%;
-}
-#totalScore{
+#highScore{
   width:20%;
   text-align:center;
   font-weight:bold;

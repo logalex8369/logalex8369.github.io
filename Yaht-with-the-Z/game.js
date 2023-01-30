@@ -84,11 +84,7 @@ function assign(selectedType, selectedNumber) {
 		for (let heldDieSrc of getHeldDice()) {
 			scoreForThisRound += getDieValue(heldDieSrc);
 		}
-		document.getElementById("chanceCount").innerHTML = 5;
-		document.getElementById("chanceScore").innerHTML = scoreForThisRound;
-		lowerGameScore += scoreForThisRound;
-		gameScore += scoreForThisRound;
-		document.getElementById("lowerTotalScore").innerHTML = lowerGameScore;
+		add(5, "chance", "lower");
 	}
 	resetGame();
 }
@@ -100,6 +96,10 @@ function resetGame() {
 	}
 
 	timesRolled = 0;
+	if (gameScore > localStorage.getItem("highScore")) {
+		localStorage.setItem("highScore", gameScore);
+		document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
+	}
 	return resetDice;
 }
 

@@ -1,132 +1,137 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Yaht-With-The-Z!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/Yaht-with-the-Z/styles.css">
-  <script src="./game.js"></script>
+	<title>Yaht-With-The-Z!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/Yaht-with-the-Z/styles.css">
+	<script src="./game.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Yaht-With-The-Z!</h1>
-    <div id="dice" class="row">
-      <div id="die0" class="col dieHolder" onclick="toggleHold(0)">
-        <div class="die">
-          <img id="die0Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
-        </div>
-      </div>
-      <div id="die1" class="col dieHolder" onclick="toggleHold(1)">
-        <div class="die">
-          <img id="die1Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
-        </div>
-      </div>
-      <div id="die2" class="col dieHolder" onclick="toggleHold(2)">
-        <div class="die">
-          <img id="die2Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
-        </div>
-      </div>
-      <div id="die3" class="col dieHolder" onclick="toggleHold(3)">
-        <div class="die">
-          <img id="die3Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
-        </div>
-      </div>
-      <div id="die4" class="col dieHolder" onclick="toggleHold(4)">
-        <div class="die">
-          <img id="die4Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
-        </div>
-      </div>
-    </div>
+	<div class="container">
+		<h1>Yaht-With-The-Z!</h1>
+		<div id="dice" class="row">
+			<div id="die0" class="col dieHolder" onclick="toggleHold(0)">
+				<div class="die">
+					<img id="die0Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
+				</div>
+			</div>
+			<div id="die1" class="col dieHolder" onclick="toggleHold(1)">
+				<div class="die">
+					<img id="die1Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
+				</div>
+			</div>
+			<div id="die2" class="col dieHolder" onclick="toggleHold(2)">
+				<div class="die">
+					<img id="die2Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
+				</div>
+			</div>
+			<div id="die3" class="col dieHolder" onclick="toggleHold(3)">
+				<div class="die">
+					<img id="die3Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
+				</div>
+			</div>
+			<div id="die4" class="col dieHolder" onclick="toggleHold(4)">
+				<div class="die">
+					<img id="die4Image" src="/Yaht-with-the-Z/img/dice/dieWhite_border0.png">
+				</div>
+			</div>
+		</div>
 
-    <div>
-      <button id="rollButton" onclick="roll();">Roll</button>
-    </div>
+		<div>
+			<button id="rollButton" onclick="roll();">Roll</button>
+		</div>
 
-    <div id="scoreCard">
-      <div class="row headerRow">
-        <div class="col rollType">&nbsp;</div>
-        <div class="col diceCount">Dice</div>
-        <div class="col score">Score</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Aces</div>
-        <div class="col diceCount" id="1Count"><button onclick="assign('number', 1)">Assign</button></div>
-        <div class="col score" id="1Score">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Twos</div>
-        <div class="col diceCount" id="2Count"><button onclick="assign('number', 2)">Assign</button></div>
-        <div class="col score" id="2Score">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Threes</div>
-        <div class="col diceCount" id="3Count"><button onclick="assign('number', 3)">Assign</button></div>
-        <div class="col score" id="3Score">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Fours</div>
-        <div class="col diceCount" id="4Count"><button onclick="assign('number', 4)">Assign</button></div>
-        <div class="col score" id="4Score">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Fives</div>
-        <div class="col diceCount" id="5Count"><button onclick="assign('number', 5)">Assign</button></div>
-        <div class="col score" id="5Score">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Sixes</div>
-        <div class="col diceCount" id="6Count"><button onclick="assign('number', 6)">Assign</button></div>
-        <div class="col score" id="6Score">0</div>
-      </div>
-      <div class="row" id="upperTotalRow">
-        <div class="col" id="upperTotalLabel">Upper Total:</div>
-        <div class="col" id="upperTotalScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Three Of A Kind</div>
-        <div class="col diceCount" id="threeOfAKindCount"><button onclick="assign('ofAKind', 3)">Assign</button></div>
-        <div class="col score" id="threeOfAKindScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Four Of A Kind</div>
-        <div class="col diceCount" id="fourOfAKindCount"><button onclick="assign('ofAKind', 4)">Assign</button></div>
-        <div class="col score" id="fourOfAKindScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Full House</div>
-        <div class="col diceCount" id="fullHouseCount"><button onclick="assign('fullHouse', 0)">Assign</button></div>
-        <div class="col score" id="fullHouseScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Small Straight</div>
-        <div class="col diceCount" id="smallStraightCount"><button onclick="assign('straight', 4)">Assign</button></div>
-        <div class="col score" id="smallStraightScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Large Straight</div>
-        <div class="col diceCount" id="largeStraightCount"><button onclick="assign('straight', 5)">Assign</button></div>
-        <div class="col score" id="largeStraightScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Yahtzee!</div>
-        <div class="col diceCount" id="yahtzeeCount"><button onclick="assign('yahtzee', 0)">Assign</button></div>
-        <div class="col score" id="yahtzeeScore">0</div>
-      </div>
-      <div class="row">
-        <div class="col rollType">Chance</div>
-        <div class="col diceCount" id="chanceCount"><button onclick="assign('chance', 0)">Assign</button></div>
-        <div class="col score" id="chanceScore">0</div>
-      </div>
-      <div class="row" id="lowerTotalRow">
-        <div class="col" id="lowerTotalLabel">Lower Total:</div>
-        <div class="col" id="lowerTotalScore">0</div>
-      </div>
-			<div class="row" id="totalRow">
-        <div class="col" id="totalLabel">Grand Total:</div>
-        <div class="col" id="totalScore">0</div>
-      </div>
-    </div>
-  </div>
+		<div id="scoreCard">
+			<div class="row headerRow">
+				<div class="col rollType">&nbsp;</div>
+				<div class="col diceCount">Dice</div>
+				<div class="col score">Score</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Aces</div>
+				<div class="col diceCount" id="1Count"><button onclick="assign('number', 1)">Assign</button></div>
+				<div class="col score" id="1Score">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Twos</div>
+				<div class="col diceCount" id="2Count"><button onclick="assign('number', 2)">Assign</button></div>
+				<div class="col score" id="2Score">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Threes</div>
+				<div class="col diceCount" id="3Count"><button onclick="assign('number', 3)">Assign</button></div>
+				<div class="col score" id="3Score">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Fours</div>
+				<div class="col diceCount" id="4Count"><button onclick="assign('number', 4)">Assign</button></div>
+				<div class="col score" id="4Score">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Fives</div>
+				<div class="col diceCount" id="5Count"><button onclick="assign('number', 5)">Assign</button></div>
+				<div class="col score" id="5Score">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Sixes</div>
+				<div class="col diceCount" id="6Count"><button onclick="assign('number', 6)">Assign</button></div>
+				<div class="col score" id="6Score">0</div>
+			</div>
+			<div class="row" id="specialRow">
+				<div class="col" id="specialLabel">Upper Total:</div>
+				<div class="col" id="upperTotalScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Three Of A Kind</div>
+				<div class="col diceCount" id="threeOfAKindCount"><button onclick="assign('ofAKind', 3)">Assign</button></div>
+				<div class="col score" id="threeOfAKindScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Four Of A Kind</div>
+				<div class="col diceCount" id="fourOfAKindCount"><button onclick="assign('ofAKind', 4)">Assign</button></div>
+				<div class="col score" id="fourOfAKindScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Full House</div>
+				<div class="col diceCount" id="fullHouseCount"><button onclick="assign('fullHouse', 0)">Assign</button></div>
+				<div class="col score" id="fullHouseScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Small Straight</div>
+				<div class="col diceCount" id="smallStraightCount"><button onclick="assign('straight', 4)">Assign</button></div>
+				<div class="col score" id="smallStraightScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Large Straight</div>
+				<div class="col diceCount" id="largeStraightCount"><button onclick="assign('straight', 5)">Assign</button></div>
+				<div class="col score" id="largeStraightScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Yahtzee!</div>
+				<div class="col diceCount" id="yahtzeeCount"><button onclick="assign('yahtzee', 0)">Assign</button></div>
+				<div class="col score" id="yahtzeeScore">0</div>
+			</div>
+			<div class="row">
+				<div class="col rollType">Chance</div>
+				<div class="col diceCount" id="chanceCount"><button onclick="assign('chance', 0)">Assign</button></div>
+				<div class="col score" id="chanceScore">0</div>
+			</div>
+			<div class="row" id="specialRow">
+				<div class="col" id="specialLabel">Lower Total:</div>
+				<div class="col" id="lowerTotalScore">0</div>
+			</div>
+			<div class="row" id="specialRow">
+				<div class="col" id="specialLabel">Grand Total:</div>
+				<div class="col" id="totalScore">0</div>
+			</div>
+			<div class="row" id="highScoreRow">
+				<div class="col" id="specialLabel">High Score:</div>
+				<div class="col" id="highScore">0</div>
+			</div>
+		</div>
+	</div>
 
 
 </body>
