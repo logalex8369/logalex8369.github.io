@@ -1,67 +1,78 @@
 function submit() {
-  var number = document.getElementById("gender").value;
-  var gender = number.options[number.selectedIndex].text;
-  number = document.getElementById("age").value;
-  var age = number.options[number.selectedIndex].text;
-  number = document.getElementById("skinColor").value;
-  var skincolor = number.options[number.selectedIndex].text;
+  var gender = document.getElementById("gender").value;
+  var age = document.getElementById("age").value;
+  var skincolor = document.getElementById("skinColor").value;
   var name = document.getElementById("name").value;
-  image = "/TextAdventure/img/" + makePerson(gender, age, skincolor) + ".png " + name;
-  return image;
+	localStorage.setItem("pastName", name);
+  var image = "/TextAdventure/img/" + makePerson(gender, age, skincolor) + ".png";
+	localStorage.setItem("pastLink", image);
+  document.getElementById('youAre').innerHTML = 'console.log("Hello ' + name + '. This will be your avatar:");';
+	document.getElementById('image').src = image;
+	console.log("Hello " + name + ". This will be your avatar:");
+	go(name);
+}
+
+function pastLogin() {
+	var name = localStorage.getItem("pastName");
+	var image = localStorage.getItem("pastLink");
+	document.getElementById('youAre').innerHTML = 'console.log("Hello ' + name + '. This will be your avatar:");';
+	document.getElementById('image').src = image;
+	console.log("Hello " + name + ". This will be your avatar:");
+	go(name);
 }
 
 function makePerson(g, a, sc) {
-  if (a == "0-15") {
-    if (g == "Boy") {
-      if (sc == "Black") {
+  if (a == "from0to15") {
+    if (g == "boy") {
+      if (sc == "black") {
         image = "black_boy"
       } else {
         image = "white_boy"
       }
     } else {
-      if (sc == "Black") {
+      if (sc == "black") {
         image = "black_girl"
       } else {
         image = "white_girl"
       }
     }
-  } else if (a == "15-30") {
-    if (g == "Boy") {
-      if (sc == "Black") {
+  } else if (a == "from15to30") {
+    if (g == "boy") {
+      if (sc == "black") {
         image = "black_teen_boy"
       } else {
         image = "white_teen_boy"
       }
     } else {
-      if (sc == "Black") {
+      if (sc == "black") {
         image = "black teen_girl"
       } else {
         image = "white_teen_girl"
       }
     }
-  } else if (a == "30-50") {
-    if (g == "Boy") {
-      if (sc == "Black") {
+  } else if (a == "from30to50") {
+    if (g == "boy") {
+      if (sc == "black") {
         image = "black_adult_boy"
       } else {
         image = "white_adult_boy"
       }
     } else {
-      if (sc == "Black") {
+      if (sc == "black") {
         image = "black_adult_girl"
       } else {
         image = "white_adult_girl"
       }
     }
   } else {
-    if (g == "Boy") {
-      if (sc == "Black") {
+    if (g == "boy") {
+      if (sc == "black") {
         image = "black_grandpa"
       } else {
         image = "white_grandpa"
       }
     } else {
-      if (sc == "Black") {
+      if (sc == "black") {
         image = "black_grandma"
       } else {
         image = "white_grandma"
@@ -71,5 +82,6 @@ function makePerson(g, a, sc) {
   return image;
 }
 
-var link = submit().slice(0,submit().indexOf(" "))
-var name = submit().slice(submit().indexOf(" ") + 1)
+function go(name){
+	
+}

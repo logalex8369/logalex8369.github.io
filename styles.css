@@ -55,7 +55,7 @@ h1{
 
 .link2{
   width: 100%;
-  background-color: #BF6600;
+  background-color: #bf7d00;
   padding: 20px 150px 10px 150px;
   text-decoration: none;
   border-radius: 12px;
@@ -63,12 +63,32 @@ h1{
 }
 .link3{
   width: 100%;
-  background-color: #BBBB00;
+  background-color: #bfc800;
   padding: 20px 150px 10px 150px;
   text-decoration: none;
   border-radius: 12px;
   margin: 12px 0px;
 }
+#link3{
+	width: 75%;
+}
+.link4{
+  width: 100%;
+  background-color: #00c800;
+  padding: 20px 150px 10px 150px;
+  text-decoration: none;
+  border-radius: 12px;
+  margin: 12px 0px;
+}
+.link5{
+  width: 100%;
+  background-color: #80ffff;
+  padding: 20px 150px 10px 150px;
+  text-decoration: none;
+  border-radius: 12px;
+  margin: 12px 0px;
+}
+
 a{
   text-decoration: none;
   color: white

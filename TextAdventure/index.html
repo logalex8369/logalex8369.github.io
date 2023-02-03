@@ -3,8 +3,6 @@
   <link rel="stylesheet" href="/TextAdventure/styles.css">
 </head>
 <body>
-
-<form action="/action_page.php">
   <label for="gender">Choose a gender:</label>
   <select name="gender" id="gender">
     <option value="boy">Boy</option>
@@ -29,7 +27,11 @@
   <input type="text" id="name" name="name">
   <br><br>
   <button onClick="submit()">Submit</button>
-</form>
+	<button onClick="pastLogin()">Past Login</button>
+	<br><br><br>
+	<div id="youAre"></div>
+	<br>
+	<img id="image">
 
 <script src="/TextAdventure/game.js"></script>
 </body>
