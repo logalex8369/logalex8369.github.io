@@ -83,5 +83,5 @@ function makePerson(g, a, sc) {
 }
 
 function go(name){
-	
+	console.log("You wake up in an empty abbey and don't remember anything. You have a scar on your left cheek. You guess that some bullies probably beat you up and left you here. Thankfully, they aren't here anymore, so you can explore now.")
 }
