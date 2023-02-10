@@ -5,7 +5,7 @@ position.coords.longitude + "&days=7&aqi=yes&alerts=no")
 			.then(res => res.json())
 			.then(weather => {
 				
-				if (weather.current.is_day) {
+				if (weather.current.is_day == 0) {
 					document.getElementById("body").style["background-image"] = "url(https://cdn2.f-cdn.com/contestentries/329593/16030908/569a8dbc19409_thumb900.jpg)";
 				} else {
 					document.getElementById("body").style["background-image"] = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsgbkLYgbTGcmkjiB7LgVRCMmdO_xcTkWAOg&usqp=CAU)";
