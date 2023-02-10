@@ -82,6 +82,22 @@ function makePerson(g, a, sc) {
   return image;
 }
 
-function go(name){
-	console.log("You wake up in an empty abbey and don't remember anything. You have a scar on your left cheek. You guess that some bullies probably beat you up and left you here. Thankfully, they aren't here anymore, so you can explore now.")
+function go(name) {
+	let text = "";
+	console.log("")
+	console.log(" You wake up in an empty abbey and don't remember anything about how you got there or what your name even is.")
+	console.log("You have a scar on your left cheek. You guess that some bullies probably beat you up and left you here.")
+	console.log("Thankfully, they aren't here anymore, so you can explore now. What direction do you walk?")
+	setTimeout(() => {text = prompt("");},250);
+	if (text == "north" || text == "North" || text == "forward" || text == "Forward") {
+		console.log("You bump into a wall.");
+	} else if (text == "east" || text == "East" || text == "right" || text == "Right") {
+	
+	} else if (text == "south" || text == "South" || text == "back" || text == "Back" || text == "backwards" || text == "Backwards" ) {
+
+	} else if (text == "west" || text == "West" || text == "left" || text == "Left") {
+
+	} else if (text == "up" || text == "Up") {
+		console.log("You are NOT spiderman...");
+	}
 }

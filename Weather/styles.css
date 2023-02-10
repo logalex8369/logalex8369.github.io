@@ -1,0 +1,11 @@
+#body {
+  background-image: none;
+	background-size: cover;
+}
+
+#icon {
+	width: 30%;
+}
+#holder {
+	text-align: center;
+}
