@@ -1,14 +1,47 @@
+/*
+World Map Key:
+
+" ":								floor
+"↑", "↓", "←", "→":	conveyor belt
+"⇵":								elevator
+"K":								key
+"D":								locked door
+"B":								bully
+"H":								hole
+"!":								item
+*/
+
+/*
+Wall Key:
+
+Straight:	"─", "│", "┼", "🞎"
+Angles:		"┌", "┐", "└", "┘"
+Combined:	"┬", "┴", "┤", "├"
+Ends:			"╷", "╵", "╶", "╴"
+
+*/
+
 let player = {}
 let world_map = [
-	["#","#","#","#","#","#","#","#"],
-	["#"," "," "," "," "," "," ","#"],
-	["#"," ","#","#"," ","#"," ","#"],
-	["#"," "," ","#"," "," "," ","#"],
-	["#","B"," "," ","#"," ","#","#"],
-	["#","^","#"," "," "," "," ","#"],
-	["#","^","K","#"," ","#","D","#"],
-	["#","^"," "," "," ","#","+","#"],
-	["#","#","#","#","#","#","#","#"]
+[	["┌","─","─","─","─","─","─","┐"],
+	["│"," "," "," "," "," "," ","│"],
+	["│"," ","╶","┐"," ","🞎"," ","│"],
+	["│"," "," ","╵"," "," "," ","│"],
+	["│","B"," "," ","🞎"," ","╶","┤"],
+	["│","↑","🞎"," "," "," "," ","│"],
+	["│","↑","K","🞎"," ","╷","D","│"],
+	["│","↑"," "," "," ","│","⇵","│"],
+	["└","─","─","─","─","┴","─","┘"] ],
+	
+[	["┌","─","─","─","─","─","┬","┐"],
+	["│","!","⇵"," ","H","!","└","┤"],
+	["├","╴"," ","╶","┬","╴"," ","│"],
+	["│"," "," "," ","╵"," "," ","│"],
+	["│","↓","╷"," "," ","╷"," ","│"],
+	["│","↓","│"," "," ","│"," ","│"],
+	["│","↓","└","╴"," ","╵"," ","│"],
+	["│","!","B"," "," "," ","⇵","│"],
+	["└","─","─","─","─","─","─","┘"] ]
 ]
 
 function submit() {
@@ -22,7 +55,7 @@ function submit() {
 	document.getElementById('youAre').innerHTML = 'console.log("Hello ' + name + '. This will be your avatar:");';
 	document.getElementById('image').src = image;
 	console.log("Hello " + name + ". This will be your avatar:");
-	player = {"gender": gender, "age": age, "skincolor": skincolor, "name": name, "pos_x": 1, "pos_y": 1};
+	player = {"gender": gender, "age": age, "skincolor": skincolor, "name": name, "pos_x": 4, "pos_y": 1, "pos_z": 0};
 	go();
 }
 
@@ -112,13 +145,10 @@ function go() {
 	} else if (text == "west" || text == "West") {
 
 	} else if (text == "up" || text == "Up") {
-		if ((player.name != "Spiderman" && player.name != "spiderman" && player.name != "Tom Holland" && player.name != "Tom holland" && player.name != "tom holland") && (player.gender == "boy" && player.age == "15to30" && player.skincolor == "white")) {
+		if ((player.name.toLowerCase() != "tom tolland" && player.name.toLowerCase() != "peter parker") && (player.gender == "boy" && player.age == "15to30" && player.skincolor == "white")) {
 			console.log("You are NOT spiderman...");
 		} else {
 			console.log("You are NOT spiderman... Or wait, actually you are...")
 		}
 	}
-}
-function answer() {
-	
 }
