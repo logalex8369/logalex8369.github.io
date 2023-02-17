@@ -29,18 +29,60 @@ let world_map = [
 	["│"," "," ","╵"," "," "," ","│"],
 	["│","B"," "," ","🞎"," ","╶","┤"],
 	["│","↑","🞎"," "," "," "," ","│"],
-	["│","↑","K","🞎"," ","╷","D","│"],
+	["│","↑","K","🞎"," ","┌","D","┤"],
 	["│","↑"," "," "," ","│","⇵","│"],
 	["└","─","─","─","─","┴","─","┘"] ],
 	
-[	["┌","─","─","─","─","─","┬","┐"],
-	["│","!","⇵"," ","H","!","└","┤"],
-	["├","╴"," ","╶","┬","╴"," ","│"],
+[	["┌","─","─","─","─","─","─","┐"],
+	["│","!","⇵"," ","H"," ","K","│"],
+	["├","╴"," ","╶","┬","D","─","┤"],
 	["│"," "," "," ","╵"," "," ","│"],
 	["│","↓","╷"," "," ","╷"," ","│"],
 	["│","↓","│"," "," ","│"," ","│"],
 	["│","↓","└","╴"," ","╵"," ","│"],
 	["│","!","B"," "," "," ","⇵","│"],
+	["└","─","─","─","─","─","─","┘"] ]
+]
+let player_map = [
+[	["┌──────┐"],
+	["│      │"],
+	["│ ╶┐ 🞎 │"],
+	["│  ╵   │"],
+	["│   🞎 ╶┤"],
+	["│↑🞎    │"],
+	["│↑!🞎 ┌D┤"],
+	["│↑   │⇵│"],
+	["└────┴─┘"] ],
+	
+[	["┌──────┐"],
+	["│!⇵   !│"],
+	["├╴ ╶┬D─┤"],
+	["│   ╵  │"],
+	["│↓╷  ╷ │"],
+	["│↓│  │ │"],
+	["│↓└╴ ╵ │"],
+	["│!    ⇵│"],
+	["└──────┘"] ]
+]
+let simple_map = [
+[	["┌","─","─","─","─","─","─","┐"],
+	["│"," "," "," "," "," "," ","│"],
+	["│"," ","╶","┐"," ","🞎"," ","│"],
+	["│"," "," ","╵"," "," "," ","│"],
+	["│"," "," "," ","🞎"," ","╶","┤"],
+	["│"," ","🞎"," "," "," "," ","│"],
+	["│"," "," ","🞎"," ","┌","D","┤"],
+	["│"," "," "," "," ","│"," ","│"],
+	["└","─","─","─","─","┴","─","┘"] ],
+	
+[	["┌","─","─","─","─","─","─","┐"],
+	["│"," "," "," "," "," "," ","│"],
+	["├","╴"," ","╶","┬","D","─","┤"],
+	["│"," "," "," ","╵"," "," ","│"],
+	["│"," ","╷"," "," ","╷"," ","│"],
+	["│"," ","│"," "," ","│"," ","│"],
+	["│"," ","└","╴"," ","╵"," ","│"],
+	["│"," "," "," "," "," "," ","│"],
 	["└","─","─","─","─","─","─","┘"] ]
 ]
 
@@ -68,7 +110,7 @@ function pastLogin() {
 	go();
 }
 
-function makePerson(g, a, sc) {
+function makePerson(g,a,sc) {
 	if (a == "from0to15") {
 		if (g == "boy") {
 			if (sc == "black") {
@@ -135,20 +177,19 @@ function go() {
 	console.log(" You wake up in an empty abbey and don't remember anything about how you got there or what your name even is.")
 	console.log("You have a scar on your left cheek. You guess that some bullies probably beat you up and left you here.")
 	console.log("Thankfully, they aren't here anymore, so you can explore now. What direction do you walk?")
+}
 
-	if (text == "north" || text == "North") {
+function move(x,y,z) {
+	let x_want = player.pos_x + x;
+	let y_want = player.pos_y + y;
+	let z_want = player.pos_z + z;
+	
+	if (simple_map[z_want][y_want][x_want] == " ") {
+		player = {"gender": player.gender, "age": player.age, "skincolor": player.skincolor, "name": player.name, "pos_x": x_want, "pos_y": y_want, "pos_z": z_want};
+	} else if (simple_map[z_want][y_want][x_want] == "D") {
+		console.log("You bump into a door.");
+	} else {
 		console.log("You bump into a wall.");
-	} else if (text == "east" || text == "East") {
-
-	} else if (text == "south" || text == "South") {
-
-	} else if (text == "west" || text == "West") {
-
-	} else if (text == "up" || text == "Up") {
-		if ((player.name.toLowerCase() != "tom tolland" && player.name.toLowerCase() != "peter parker") && (player.gender == "boy" && player.age == "15to30" && player.skincolor == "white")) {
-			console.log("You are NOT spiderman...");
-		} else {
-			console.log("You are NOT spiderman... Or wait, actually you are...")
-		}
 	}
+	console.log(player_map[player.pos_z])
 }

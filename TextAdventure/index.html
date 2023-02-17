@@ -29,11 +29,18 @@
   <button onClick="submit()">Submit</button>
 	<button onClick="pastLogin()">Past Login</button>
 	<br><br>
-	<input type="text" id="text" name="text" onChange='answer()'>
-	<br><br><br>
 	<div id="youAre"></div>
 	<br>
 	<img id="image">
+	<br><br>
+	<img src="/TextAdventure/img/up_button.png" onclick="move(0,-1,0)">
+	<img src="/TextAdventure/img/up_button.png" onclick="move(0,0,1)">
+	<br>
+	<img src="/TextAdventure/img/left_button.png" onclick="move(-1,0,0)">
+	<img src="/TextAdventure/img/right_button.png" onclick="move(1,0,0)">
+	<br>
+	<img src="/TextAdventure/img/down_button.png" onclick="move(0,1,0)">
+	<img src="/TextAdventure/img/down_button.png" onclick="move(0,0,-1)">
 
 <script src="/TextAdventure/game.js"></script>
 </body>
