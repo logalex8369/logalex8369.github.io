@@ -39,57 +39,40 @@ body{
 }
 
 h1{
-  text-align:center;
-  font-size:60px;
-  margin-top:0;
+  text-align: center;
+  font-size: 60px;
+	margin: 0 0 0 0;
+}
+h3{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 5px;
 }
 
-.link1{
-  width: 100%;
+#link1{
   background-color: #AF3333;
-  padding: 20px 0px 10px 0px;
-  text-decoration: none;
-  border-radius: 12px;
-  margin: 12px 0px;
 }
 
-.link2{
-  width: 100%;
+#link2{
   background-color: #bf7d00;
-  padding: 20px 150px 10px 150px;
-  text-decoration: none;
-  border-radius: 12px;
-  margin: 12px 0px;
-}
-.link3{
-  width: 100%;
-  background-color: #e1e100;
-  padding: 20px 150px 10px 150px;
-  text-decoration: none;
-  border-radius: 12px;
-  margin: 12px 0px;
 }
 #link3{
+  background-color: #e1e100;
+}
+.link3{
 	width: 75%;
 }
-.link4{
-  width: 100%;
+#link4{
   background-color: #00c800;
-  padding: 20px 150px 10px 150px;
-  text-decoration: none;
-  border-radius: 12px;
-  margin: 12px 0px;
-}
-.link5{
-  width: 100%;
-  background-color: #80ffff;
-  padding: 20px 150px 10px 150px;
-  text-decoration: none;
-  border-radius: 12px;
-  margin: 12px 0px;
 }
 #link5{
+  background-color: #80ffff;
+}
+.link5{
 	width: 200%;
+}
+#link6{
+  background-color: #0040ff;
 }
 
 a{
@@ -113,4 +96,11 @@ a{
 }
 img{
   padding: 15px 0px
+}
+.links{
+	width: 100%;
+	padding: 20px 150px 10px 150px;
+	text-decoration: none;
+  border-radius: 12px;
+  margin: 12px 0px;
 }

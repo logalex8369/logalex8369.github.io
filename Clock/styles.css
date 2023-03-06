@@ -1,0 +1,18 @@
+#canvas {
+	background-color:#222244;
+}
+#canvas2 {
+	background-color:#222244;
+}
+.center {
+	text-align: center;
+	background-size: contain;
+}
+@font-face {
+	font-family: 'digital7';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/Clock/digital7.regular.otf) format('opentype');
+	unicode-range: U+0030-003A;
+	font-display: swap;
+}

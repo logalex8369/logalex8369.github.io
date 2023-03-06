@@ -1,32 +1,34 @@
 <html>
+
 <head>
-  <link rel="stylesheet" href="/TextAdventure/styles.css">
+	<link rel="stylesheet" href="/TextAdventure/styles.css">
 </head>
+
 <body>
-  <label for="gender">Choose a gender:</label>
-  <select name="gender" id="gender">
-    <option value="boy">Boy</option>
-    <option value="girl">Girl</option>
-  </select>
-  <br><br>
-  <label for="age">Choose an age:</label>
-  <select name="age" id="age">
-    <option value="from0to15">0-15</option>
-    <option value="from15to30">15-30</option>
-    <option value="from30to50">30-50</option>
-    <option value="from50to">50+</option>
-  </select>
-  <br><br>
-  <label for="skinColor">Choose a skin color:</label>
-  <select name="skinColor" id="skinColor">
-    <option value="white">White</option>
-    <option value="black">Black</option>
-  </select>
-  <br><br>
-  <label for="name">Choose a name:</label>
-  <input type="text" id="name" name="name">
-  <br><br>
-  <button onClick="submit()">Submit</button>
+	<label for="gender">Choose a gender:</label>
+	<select name="gender" id="gender">
+		<option value="boy">Boy</option>
+		<option value="girl">Girl</option>
+	</select>
+	<br><br>
+	<label for="age">Choose an age:</label>
+	<select name="age" id="age">
+		<option value="from0to15">0-15</option>
+		<option value="from15to30">15-30</option>
+		<option value="from30to50">30-50</option>
+		<option value="from50to">50+</option>
+	</select>
+	<br><br>
+	<label for="skinColor">Choose a skin color:</label>
+	<select name="skinColor" id="skinColor">
+		<option value="white">White</option>
+		<option value="black">Black</option>
+	</select>
+	<br><br>
+	<label for="name">Choose a name:</label>
+	<input type="text" id="name" name="name">
+	<br><br>
+	<button onClick="submit()">Submit</button>
 	<button onClick="pastLogin()">Past Login</button>
 	<br><br>
 	<div id="youAre"></div>
@@ -42,6 +44,7 @@
 	<img src="/TextAdventure/img/down_button.png" onclick="move(0,1,0)">
 	<img src="/TextAdventure/img/down_button.png" onclick="move(0,0,-1)">
 
-<script src="/TextAdventure/game.js"></script>
+	<script src="/TextAdventure/game.js"></script>
 </body>
+
 </html>
